@@ -432,7 +432,7 @@ module Kitchen
           s = https_proxy ? "https_proxy=#{https_proxy}" : nil
           p = http_proxy ? "http_proxy=#{http_proxy}" : nil
           n = no_proxy ? "no_proxy=#{no_proxy}" : nil
-          p || s || n ? " #{p} #{s} #{n} #{config[:sudo_command]} -s #{cd_ansible} #{script}" : "#{config[:sudo_command]} -s #{cd_ansible} #{script}"
+          p || s || n ? " #{p} #{s} #{n} #{config[:sudo_command]} -i #{cd_ansible} #{script}" : "#{config[:sudo_command]} -i #{cd_ansible} #{script}"
         else
           return script
         end
